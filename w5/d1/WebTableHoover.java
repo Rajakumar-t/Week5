@@ -26,13 +26,11 @@ public class WebTableHoover {
 		// enter the MAS to the from
 		driver.findElement(By.xpath("//input[@id='txtStationFrom']")).clear();
 		driver.findElement(By.xpath("//input[@id='txtStationFrom']")).sendKeys("MAS", Keys.ENTER);
-		;
 		// driver.findElement(By.xpath("//input[@id='txtStationFrom']")).click();
 
 		// enter the MDU to the to
 		driver.findElement(By.xpath("//input[@id='txtStationTo']")).clear();
 		driver.findElement(By.xpath("//input[@id='txtStationTo']")).sendKeys("MDU", Keys.ENTER);
-		;
 
 		// un-check the date
 		driver.findElement(By.xpath("//input[@id='chkSelectDateOnly']")).click();
