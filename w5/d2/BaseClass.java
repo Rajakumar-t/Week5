@@ -2,6 +2,7 @@ package hw.w5.d2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -10,7 +11,9 @@ public class BaseClass {
 	
 @BeforeMethod	
 public void precondition() {
-	driver = new FirefoxDriver();
+	FirefoxOptions ff = new FirefoxOptions();
+	ff.addArguments("--disable-notifications");
+	driver = new FirefoxDriver(ff);
 	driver.get("https://login.salesforce.com");
 	driver.manage().window().maximize();
 	driver.findElement(By.id("username")).sendKeys("bhuvanesh.moorthy@testleaf.com");
