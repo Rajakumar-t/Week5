@@ -45,18 +45,25 @@ public class TestCompanyName extends BaseClass{
 		driver.findElement(By.xpath("(//textarea[@class='slds-textarea'])[2]")).sendKeys("Salesforces");
 		
 		
-		WebElement dropelement = driver.findElement(By.xpath("//button[@class='slds-combobox__input slds-input_faux fix-slds-input_faux slds-combobox__input-value']"));
-		Select click = new Select(dropelement);
-		click.deselectByVisibleText("Active");
+		//WebElement dropelement = driver.findElement(By.xpath("//button[@class='slds-combobox__input slds-input_faux fix-slds-input_faux slds-combobox__input-value']"));
+		//Select click = new Select(dropelement);
+		//click.deselectByVisibleText("Active");
 		//Actions move = new Actions(driver);
 		//move.sendKeys(Keys.PAGE_DOWN).perform();
 		//Thread.sleep(1000);
 		//WebElement dropelement = driver.findElement(By.xpath("//button[@class='slds-combobox__input slds-input_faux fix-slds-input_faux slds-combobox__input-value']"));
 		//Select dropdown=new Select(dropelement);
 		//dropdown.deselectByVisibleText("Active");
-		//driver.findElement(By.xpath("//span[@title='Active']")).click();
-
-        // Click Save without filling Name
+		//label[text()='Status']//following::button
+		Thread.sleep(1000);
+		WebElement element = driver.findElement(By.xpath("//label[text()='Status']//following::button"));
+		driver.executeScript("arguments[0].click()",element);
+		WebElement element2 = driver.findElement(By.xpath("//span[@title='Active']"));
+		driver.executeScript("arguments[0].click()",element2);
+		Thread.sleep(3000);
+      
+		
+		// Click Save without filling Name
         driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 
         // Verify alert message for missing Name field
