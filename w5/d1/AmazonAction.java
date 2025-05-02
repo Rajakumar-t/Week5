@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 
 import org.openqa.selenium.OutputType;
@@ -49,9 +49,9 @@ public class AmazonAction {
 		
 		
 		//screen shot 
-		//File scr = driver.getScreenshotAs(OutputType.FILE);
-		//File target = new File("/Users/rthanaraj/Downloads/Screenshot/Amazon/sc");
-		//FileUtils.copyFile(scr,target);
+		File scr = driver.getScreenshotAs(OutputType.FILE);
+		File target = new File("/Users/rthanaraj/Downloads/Screenshot/Amazon/sc/am.jpg");
+		FileUtils.copyFile(scr,target);
 		
 		//window handling 
 		Set<String> windowHandles = driver.getWindowHandles();
